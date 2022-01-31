@@ -12,7 +12,7 @@ export const TodoList = (props) => {
     const {todos, deleteTodo} = props;
 
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <List sx={{width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}>
             {todos.map((value, index) => {
                 const labelId = `checkbox-list-label-${value}`;
 
@@ -20,27 +20,27 @@ export const TodoList = (props) => {
                     <ListItem
                         key={value}
                         secondaryAction={
-                            <IconButton edge="end" >
+                            <IconButton edge="end">
                                 <DeleteIcon
-                                onClick={() => deleteTodo(index)}
+                                    onClick={() => deleteTodo(index)}
                                 />
                             </IconButton>
                         }
                         disablePadding
                     >
 
-                            <ListItemIcon>
-                                <Checkbox
-                                    edge="start"
-                                    tabIndex={-1}
-                                    disableRipple
-                                    inputProps={{ 'aria-labelledby': labelId }}
-                                />
-                            </ListItemIcon>
-                            <ListItemText id={labelId} primary={`${value}`} />
+                        <ListItemIcon>
+                            <Checkbox
+                                edge="start"
+                                tabIndex={-1}
+                                disableRipple
+                                inputProps={{'aria-labelledby': labelId}}
+                            />
+                        </ListItemIcon>
+                        <ListItemText id={labelId} primary={`${value}`}/>
                     </ListItem>
                 );
             })}
         </List>
-       )
+    )
 }

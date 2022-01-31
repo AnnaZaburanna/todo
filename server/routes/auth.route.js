@@ -16,7 +16,7 @@ module.exports = app => {
         "/signup",
         [
             check('email', 'Incorrect email').isEmail(),
-            check('password', 'At least 6 characters are required').isLength({ min:6 })
+            check('password', 'At least 6 characters are required').isLength({min: 6})
         ],
         auth.signUp);
 
